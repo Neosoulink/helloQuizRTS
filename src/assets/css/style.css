@@ -33,7 +33,7 @@
 }
 
 .App>.content {
-	background-color: rgba(17, 219, 168, 0.5);
+	background-color: palevioletred;
 	display: flex;
 	justify-content: center;
 	align-items: center;

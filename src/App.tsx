@@ -1,4 +1,5 @@
 import React from "react";
+import QuestionCard from './components/QuestionCard';
 import "./assets/css/style.css";
 
 function App() {

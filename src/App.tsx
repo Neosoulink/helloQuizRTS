@@ -1,8 +1,17 @@
 import React from "react";
-import QuestionCard from './components/QuestionCard';
+// eslint-disable-next-line
+import QuestionCard from "./components/QuestionCard";
+
 import "./assets/css/style.css";
 
 function App() {
+	// eslint-disable-next-line
+	const initializeTrivia = async () => {};
+	// eslint-disable-next-line
+	const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {};
+	// eslint-disable-next-line
+	const nextQuestion = () => {};
+
 	return (
 		<div className="App">
 			<div className="bg-img"></div>

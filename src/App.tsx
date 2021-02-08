@@ -7,7 +7,7 @@ import { Difficulty, QuestionState } from "./API";
 // Components
 import QuestionCard from "./components/QuestionCard";
 
-import "./assets/css/style.css";
+import { GlobalStyle } from "./assets/ts/App.style";
 
 const TOTAL_QUESTION = 10;
 
@@ -78,40 +78,43 @@ function App() {
 	}, [userAnswers]);
 
 	return (
-		<div className="App">
-			<div className="bg-img"></div>
-			<div className="content">
-				<div>
-					<h1>Hello Quiz</h1>
-					{gameOver || userAnswers.length === TOTAL_QUESTION ? (
-						<button className="start" onClick={startTrivia}>
-							Start
-						</button>
-					) : null}
-					{!gameOver && <p className="score">Score: {score}</p>}
-					{loading && <p>loading Questions ...</p>}
-
-					{!loading && !gameOver && (
-						<QuestionCard
-							questionNbr={number + 1}
-							totalQuestion={TOTAL_QUESTION}
-							question={questions[number].question}
-							answers={questions[number].answers}
-							userAnswer={userAnswers ? userAnswers[number] : undefined}
-							callback={checkAnswer}
-						/>
-					)}
-					{!loading &&
-						!gameOver &&
-						userAnswers.length === number + 1 &&
-						number < TOTAL_QUESTION - 1 && (
-							<button className="next" onClick={nextQuestion}>
-								Next Question
+		<>
+			<GlobalStyle />
+			<div className="App">
+				<div className="bg-img"></div>
+				<div className="content">
+					<div>
+						<h1>Hello Quiz</h1>
+						{gameOver || userAnswers.length === TOTAL_QUESTION ? (
+							<button className="start" onClick={startTrivia}>
+								Start
 							</button>
+						) : null}
+						{!gameOver && <p className="score">Score: {score}</p>}
+						{loading && <p>loading Questions ...</p>}
+
+						{!loading && !gameOver && (
+							<QuestionCard
+								questionNbr={number + 1}
+								totalQuestion={TOTAL_QUESTION}
+								question={questions[number].question}
+								answers={questions[number].answers}
+								userAnswer={userAnswers ? userAnswers[number] : undefined}
+								callback={checkAnswer}
+							/>
 						)}
+						{!loading &&
+							!gameOver &&
+							userAnswers.length === number + 1 &&
+							number < TOTAL_QUESTION - 1 && (
+								<button className="next" onClick={nextQuestion}>
+									Next Question
+								</button>
+							)}
+					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 }
 

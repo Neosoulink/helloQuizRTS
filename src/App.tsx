@@ -7,7 +7,7 @@ import { Difficulty, QuestionState } from "./API";
 // Components
 import QuestionCard from "./components/QuestionCard";
 
-import { GlobalStyle } from "./assets/ts/App.style";
+import { GlobalStyle, Wrapper } from "./assets/ts/App.style";
 
 const TOTAL_QUESTION = 10;
 
@@ -83,7 +83,7 @@ function App() {
 			<div className="App">
 				<div className="bg-img"></div>
 				<div className="content">
-					<div>
+					<Wrapper>
 						<h1>Hello Quiz</h1>
 						{gameOver || userAnswers.length === TOTAL_QUESTION ? (
 							<button className="start" onClick={startTrivia}>
@@ -111,7 +111,7 @@ function App() {
 									Next Question
 								</button>
 							)}
-					</div>
+					</Wrapper>
 				</div>
 			</div>
 		</>
